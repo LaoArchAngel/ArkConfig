@@ -5,6 +5,6 @@ Param(
 )
 
 $setPass = Get-Content $passwordFile
-$token = "**SERVERPASSWORD**"
+$token = "\*\*SERVERPASSWORD\*\*"
 
-(Get-Content .\GameUserSettings.ini)|ForEach-Object {$_ -replace "$token",$setPass}|Set-Content .\GameUserSettings.ini
+(Get-Content .\GameUserSettings.ini)|ForEach-Object {$_ -replace $token,$setPass}|Set-Content .\GameUserSettings.ini
